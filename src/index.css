@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    direction: rtl;
+    font-family: 'Noto Kufi Arabic', 'Cairo', sans-serif;
+  }
+
+  body {
+    background-color: #0a0a0f;
+    color: #e8e4df;
+    min-height: 100vh;
+  }
+
+  input, button, select, textarea {
+    font-family: 'Noto Kufi Arabic', 'Cairo', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a30;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a40;
+  }
+}
+
+@layer components {
+  .gold-btn {
+    @apply bg-gold text-dark-bg font-bold px-6 py-3 rounded-xl cursor-pointer
+           transition-all duration-200 hover:brightness-110 active:scale-95 border-none;
+  }
+
+  .outline-gold-btn {
+    @apply bg-transparent text-gold border border-gold/30 px-5 py-2.5 rounded-xl
+           cursor-pointer transition-all duration-200 hover:bg-gold/10;
+  }
+
+  .card {
+    @apply bg-dark-card border border-white/[0.07] rounded-2xl;
+  }
+
+  .form-input {
+    @apply w-full bg-dark-input border border-white/10 text-[#e8e4df] px-4 py-2.5
+           rounded-xl text-sm outline-none transition-colors duration-200
+           focus:border-gold/40 placeholder:text-white/20;
+  }
+
+  .nav-link {
+    @apply px-4 py-1.5 rounded-lg text-sm transition-all duration-200 cursor-pointer border;
+  }
+
+  .status-badge {
+    @apply text-[11px] px-2.5 py-0.5 rounded-md font-medium;
+  }
+}
